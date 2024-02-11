@@ -3,7 +3,7 @@ import Header from "./Header";
 import ListingsContainer from "./ListingsContainer";
 
 function App() {
-  const [listings, setListings] = useState([]);
+  const [listings, setListings] = useState([])
 
   const baseUrl = "http://localhost:6001/listings/";
 
@@ -13,7 +13,6 @@ function App() {
     .then(listings => setListings(listings))
   }, [])
 
-  
 
   return (
     <div className="app">
@@ -23,7 +22,7 @@ function App() {
       />
       <ListingsContainer 
         listings = { listings }
-        setListings = { setListings }
+        setListings = { setListings }     
       />
     </div>
   );
