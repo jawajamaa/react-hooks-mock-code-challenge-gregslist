@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
+
+##Large and Uneccesary files folder
+gregslist-large-files
