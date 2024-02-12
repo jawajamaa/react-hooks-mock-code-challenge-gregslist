@@ -21,6 +21,7 @@ function App() {
         setListings = { setListings }
       />
       <ListingsContainer 
+        baseUrl = { baseUrl }
         listings = { listings }
         setListings = { setListings }     
       />
