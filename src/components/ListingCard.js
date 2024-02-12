@@ -3,11 +3,12 @@ import React, { useState } from "react";
 function ListingCard({ 
   baseUrl, 
   description, 
-  id, image, 
+  id, 
+  image, 
   location, 
   onHandleDeleteItem 
 }) {
-  
+
   // const { description, id, image, location } = listing;
   const [isFav, setIsFav] = useState(false);
 

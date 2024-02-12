@@ -1,10 +1,12 @@
 import React from "react";
 import ListingCard from "./ListingCard";
 
-function ListingsContainer({ baseUrl, listings, setListings }) {
-
-
-  console.log(listings);
+function ListingsContainer({ 
+  baseUrl, 
+  listings, 
+  setListings, 
+  searchInput 
+}) {
 
   function onHandleDeleteItem(id) {
     const updateListings = listings.filter(listing => (
@@ -12,10 +14,18 @@ function ListingsContainer({ baseUrl, listings, setListings }) {
       setListings(updateListings);
   } 
 
+  const searchReturnListings = listings.filter(listing => (
+      listing.description.includes(searchInput)
+    ))
+    
+  
+  
+console.log(searchReturnListings);
+
   return (
     <main>
       <ul className="cards">
-        {listings.map(listing => (
+        {searchReturnListings.map(listing => (
           <ListingCard 
           baseUrl = { baseUrl }
           key = { listing.id }
