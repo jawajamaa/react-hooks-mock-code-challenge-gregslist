@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-function ListingCard({ listing, isFav, onHandleFav }) {
-const { description, id, image, location } = listing;
+function ListingCard({ description, id, image, location }) {
+// const { description, id, image, location } = listing;
+const [isFav, setIsFav] = useState(false);
 
 
-  function handleFavClick (event) {
-console.log(event.target.name)
-console.log(listing)
-    // onHandleFav(listing);
-  }
 
   return (
     <li className="card">
@@ -20,12 +16,12 @@ console.log(listing)
         {isFav ? (
           <button 
           className="emoji-button favorite active"
-          onClick = { handleFavClick }
+          onClick = { () => setIsFav(!isFav) }
           >★</button>
         ) : (
           <button 
           className="emoji-button favorite"
-          onClick = { handleFavClick }
+          onClick = { () => setIsFav(!isFav) }
           >☆</button>
         )}
         <strong>{ description }</strong>

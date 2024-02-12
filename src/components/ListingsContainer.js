@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import ListingCard from "./ListingCard";
 
 function ListingsContainer({ listings, setListings }) {
-  const [isFav, setIsFav] = useState(false);
+
 
   console.log(listings);
 
-  function onHandleFav(event) {
-    console.log(event);
-    setIsFav(!isFav)
-  }
 
   return (
     <main>
@@ -17,9 +13,8 @@ function ListingsContainer({ listings, setListings }) {
         {listings.map(listing => (
           <ListingCard 
           key = { listing.id }
-          listing = { listing }
-          isFav = { isFav }
-          setIsFav = { onHandleFav }
+          // listing = { listing } next line makes it possible to loose ln 4 in ListingCard
+          { ...listing }
           />
         ))}
       </ul>
