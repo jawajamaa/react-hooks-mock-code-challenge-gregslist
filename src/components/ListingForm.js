@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 function ListingForm({
     baseUrl, 
-    formData, 
-    setFormData,
     onFormSubmit,  
 }) {
-
+    const [formData, setFormData] = useState({
+        description:"",
+        image:"",
+        location:""
+      })
 
     function handleChange(e) {
         setFormData({
@@ -30,7 +32,7 @@ function ListingForm({
             })
         })
         .then((r) => r.json())
-        .then(()=> onFormSubmit())
+        .then((data)=> onFormSubmit(data))
     }
 
     return(

@@ -53,6 +53,18 @@
       "image": "./images/eliza-diamond-screws-unsplash.jpg",
       "location": "park Slope",
       "id": 9
+    },
+    {
+      "description": "things",
+      "image": "",
+      "location": "Park Slope",
+      "id": 10
+    },
+    {
+      "description": "more things",
+      "image": "",
+      "location": "Bushwick",
+      "id": 11
     }
   ]
 }

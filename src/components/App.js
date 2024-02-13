@@ -7,11 +7,7 @@ function App() {
   const [listings, setListings] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  const [formData, setFormData] = useState({
-    description:"",
-    image:"",
-    location:""
-  })
+
 // for a controlled form, formData should live in ListingForm, and the reference
 // can be passed up to App to update. by state living here, it makes the App very expensive, causing a re-render each time anything is entered into input
 
@@ -27,9 +23,12 @@ function App() {
     setSearchInput(() => searchInput);
   }
 
-  function onFormSubmit() {
+  function onFormSubmit(data) {
+    console.log(data);
     setListings([...listings,
-      formData])
+    data])
+    // setListings([...listings,
+      // formData])
   }
 
   return (
@@ -45,8 +44,6 @@ function App() {
       />
       <ListingForm
         baseUrl = { baseUrl }
-        formData = { formData }
-        setFormData = { setFormData }
         onFormSubmit =  { onFormSubmit }
       />
       <ListingsContainer 
