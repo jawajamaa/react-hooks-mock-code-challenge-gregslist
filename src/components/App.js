@@ -5,6 +5,7 @@ import ListingsContainer from "./ListingsContainer";
 function App() {
   const [listings, setListings] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const baseUrl = "http://localhost:6001/listings/";
 
@@ -15,8 +16,11 @@ function App() {
   }, [])
 
   function onHandleSubmit() {
-    console.log(searchInput)
     setSearchInput(() => searchInput);
+  }
+
+  function onHandleChecked() {
+console.log(isChecked)
   }
 
   return (
@@ -26,13 +30,17 @@ function App() {
         setListings = { setListings }
         searchInput = { searchInput }
         setSearchInput = { setSearchInput } 
-        onHandleSubmit = { onHandleSubmit }     
+        onHandleSubmit = { onHandleSubmit } 
+        isChecked = { isChecked }
+        setIsChecked = { setIsChecked }
+        onHandleChecked = { onHandleChecked }    
       />
       <ListingsContainer 
         baseUrl = { baseUrl }
         listings = { listings }
         setListings = { setListings }
-        searchInput = { searchInput }     
+        searchInput = { searchInput }
+        isChecked = { isChecked }     
       />
     </div>
   );

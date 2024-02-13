@@ -5,7 +5,8 @@ function ListingsContainer({
   baseUrl, 
   listings, 
   setListings, 
-  searchInput 
+  searchInput,
+  isChecked 
 }) {
 
   function onHandleDeleteItem(id) {
@@ -14,13 +15,23 @@ function ListingsContainer({
       setListings(updateListings);
   } 
 
-  const searchReturnListings = listings.filter(listing => (
-      listing.description.includes(searchInput)
-    ))
-    
-  
-  
-console.log(searchReturnListings);
+
+  const searchReturnListings = listings
+    .filter(listing => listing.description.includes(searchInput));
+    if (isChecked) {
+       searchReturnListings.sort((a,b) => {
+        a = a.location.toLowerCase();
+        b = b.location.toLowerCase();
+        if (a < b) {
+          return -1
+        }
+        if (a > b) {
+          return 1
+        }
+        return 0
+      })
+    } 
+      
 
   return (
     <main>

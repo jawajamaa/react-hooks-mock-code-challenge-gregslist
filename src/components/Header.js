@@ -1,7 +1,16 @@
 import React from "react";
 import Search from "./Search";
+import Sort from "./Sort";
 
-function Header({ searchInput, setSearchInput, onHandleSubmit }) {
+function Header({ 
+  searchInput, 
+  setSearchInput, 
+  onHandleSubmit, 
+  isChecked,
+  setIsChecked,
+  onHandleChecked 
+}) {
+
   return (
     <header>
       <h1>
@@ -14,6 +23,11 @@ function Header({ searchInput, setSearchInput, onHandleSubmit }) {
       searchInput = { searchInput } 
       setSearchInput = { setSearchInput }
       onHandleSubmit = { onHandleSubmit }
+      />
+      <Sort
+        isChecked = { isChecked }
+        setIsChecked = { setIsChecked }
+      onHandleChecked = { onHandleChecked }
       />
     </header>
   );

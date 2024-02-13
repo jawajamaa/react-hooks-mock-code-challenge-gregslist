@@ -4,8 +4,7 @@ function Search({ searchInput, setSearchInput, onHandleSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
-    onHandleSubmit(() => searchInput);
+    onHandleSubmit(() => searchInput); 
   }
 
   function handleChange(event) {
@@ -19,7 +18,6 @@ function Search({ searchInput, setSearchInput, onHandleSubmit }) {
         id="search"
         placeholder="search free stuff"
         value={ searchInput }
-        // onChange={(e) => console.log(e.target.value)}
         onChange={ handleChange }
       />
       <button type="submit">🔍</button>
