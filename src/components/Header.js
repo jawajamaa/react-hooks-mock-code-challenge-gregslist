@@ -8,7 +8,6 @@ function Header({
   onHandleSubmit, 
   isChecked,
   setIsChecked,
-  onHandleChecked 
 }) {
 
   return (
@@ -27,7 +26,6 @@ function Header({
       <Sort
         isChecked = { isChecked }
         setIsChecked = { setIsChecked }
-      onHandleChecked = { onHandleChecked }
       />
     </header>
   );

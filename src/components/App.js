@@ -12,6 +12,8 @@ function App() {
     image:"",
     location:""
   })
+// for a controlled form, formData should live in ListingForm, and the reference
+// can be passed up to App to update. by state living here, it makes the App very expensive, causing a re-render each time anything is entered into input
 
   const baseUrl = "http://localhost:6001/listings/";
 
@@ -25,8 +27,9 @@ function App() {
     setSearchInput(() => searchInput);
   }
 
-  function onHandleChecked() {
-console.log(isChecked)
+  function onFormSubmit() {
+    setListings([...listings,
+      formData])
   }
 
   return (
@@ -38,10 +41,13 @@ console.log(isChecked)
         setSearchInput = { setSearchInput } 
         onHandleSubmit = { onHandleSubmit } 
         isChecked = { isChecked }
-        setIsChecked = { setIsChecked }
-        onHandleChecked = { onHandleChecked }    
+        setIsChecked = { setIsChecked }  
       />
       <ListingForm
+        baseUrl = { baseUrl }
+        formData = { formData }
+        setFormData = { setFormData }
+        onFormSubmit =  { onFormSubmit }
       />
       <ListingsContainer 
         baseUrl = { baseUrl }

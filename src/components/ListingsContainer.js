@@ -40,7 +40,7 @@ function ListingsContainer({
           <ListingCard 
           baseUrl = { baseUrl }
           key = { listing.id }
-          // listing = { listing } next line makes it possible to loose ln 4 in ListingCard
+          // listing = { listing } next line makes it possible to loose ln 12 in ListingCard
           { ...listing }
           onHandleDeleteItem = { onHandleDeleteItem }
           />

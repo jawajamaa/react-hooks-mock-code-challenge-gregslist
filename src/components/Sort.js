@@ -1,10 +1,9 @@
 import React from "react";
 
-function Sort({ isChecked, setIsChecked, onHandleChecked }) {
+function Sort({ isChecked, setIsChecked }) {
 
     function handleCheck(event) {
         setIsChecked(event.target.checked);
-        onHandleChecked(isChecked);
     }
 
     return (
