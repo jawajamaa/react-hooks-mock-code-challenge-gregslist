@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import ListingsContainer from "./ListingsContainer";
+import ListingForm from "./ListingForm";
 
 function App() {
   const [listings, setListings] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const [formData, setFormData] = useState({
+    description:"",
+    image:"",
+    location:""
+  })
 
   const baseUrl = "http://localhost:6001/listings/";
 
@@ -34,6 +40,8 @@ console.log(isChecked)
         isChecked = { isChecked }
         setIsChecked = { setIsChecked }
         onHandleChecked = { onHandleChecked }    
+      />
+      <ListingForm
       />
       <ListingsContainer 
         baseUrl = { baseUrl }
